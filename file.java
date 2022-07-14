@@ -2,7 +2,8 @@
 
     private void OnDisable()
     {
-        UDPConnection.Instance.UDPMessageReceivedEvent -= HandleUDPMessage; 
+        if (UDPConnection.Instance != null)
+            UDPConnection.Instance.UDPMessageReceivedEvent -= HandleUDPMessage;
     }
 
 
